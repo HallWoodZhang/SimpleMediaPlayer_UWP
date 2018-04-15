@@ -13,6 +13,8 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         
         <Grid.RowDefinitions>
@@ -24,20 +26,24 @@
         <TextBlock Name="State" Grid.Column="1" Grid.Row="0"/>
 
         <Button 
-            Name="OpenBtn"
+            Name="PlayBtn"
             HorizontalAlignment="Center"
-            Content="Open the media file" 
-            Grid.Row="1" Grid.Column="1" 
-            Click="ButtonClickHandler"
+            Content="Play the online music" 
+            Grid.Row="1" Grid.Column="2" 
+            Click="PlayerButtonClickHandler"
         />
 
-        <MediaPlayerElement 
-            Name="MediaPlayer" AutoPlay="False"
-            Grid.Row="0" Grid.Column="0"
-            Grid.RowSpan="3" Grid.ColumnSpan="3"
-            Visibility="Collapsed"
-            AreTransportControlsEnabled="True"
-        />
+        <StackPanel
+            Orientation="Horizontal"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Grid.Row="2" Grid.Column="2">
+            <Button 
+                Name="DownloadBtn"
+                Content="Download" 
+                Click="DownloadButtonClickHandler"/>
+            <ProgressRing Name="MainPageRing" IsActive="False" />
+        </StackPanel>
 
     </Grid>
 </Page>
